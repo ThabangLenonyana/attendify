@@ -45,7 +45,7 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
 
    ```bash
    git clone https://github.com/yourusername/attendance-gamification-app.git
-  ```
+    ```
 
 2. **Navigate to the backend directory:**
 
@@ -90,7 +90,8 @@ Navigate to the frontend directory:**
 
    ```bash
   npm start
-  ```
+    ```
+    
 ## Folder Structure
 Outline the structure of your project, including an explanation of the contents of each folder.
 

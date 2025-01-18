@@ -45,49 +45,56 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
 
    ```bash
    git clone https://github.com/yourusername/attendance-gamification-app.git
-Navigate to the backend directory:
 
-bash
-cd attendance-gamification-app/backend
-Create a virtual environment and activate it:
+2. **Navigate to the backend directory:**
 
-bash
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install the required packages:
+  ```bash
+  cd attendance-gamification-app/backend
 
-bash
-pip install -r requirements.txt
-Apply migrations and start the Django server:
+3. **Create a virtual environment and activate it:**
 
-bash
-python manage.py migrate
-python manage.py runserver
-Frontend Installation
-Navigate to the frontend directory:
+  ```bash
+  python -m venv venv
+  source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
-bash
-cd ../frontend
-Install the required packages:
+4. **Install the required packages:**
 
-bash
-npm install
-Start the React development server:
+  ```bash
+  pip install -r requirements.txt
 
-bash
-npm start
-Usage
-Provide instructions and examples for using the application.
+5. **Apply migrations and start the Django server:**
 
-Folder Structure
+  ```bash
+  python manage.py migrate
+  python manage.py runserver
+
+5. **Frontend Installation
+Navigate to the frontend directory:**
+
+  ```bash
+  cd ../frontend
+
+6. **Install the required packages:**
+
+  ```bash
+  npm install
+
+7. **Start the React development server:**
+
+   ```bash
+  npm start
+  Usage
+  Provide instructions and examples for using the application.
+
+## Folder Structure
 Outline the structure of your project, including an explanation of the contents of each folder.
 
-Contributing
+## Contributing
 Explain how other developers can contribute to your project.
 
-License
+## License
 Specify the license under which your project is distributed.
 
-Contact
+## Contact
 Provide contact information for people who want to get in touch with you regarding the project.
 ```

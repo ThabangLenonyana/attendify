@@ -37,7 +37,7 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
 - Django and Django REST Framework
 - React
 - IDE (VS Code, PyCharm)
-- Firebase account (optional for authentication)
+- Azure Cloud Account
 
 ### Backend Installation
 
@@ -45,47 +45,52 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
 
    ```bash
    git clone https://github.com/yourusername/attendance-gamification-app.git
+  ```
 
 2. **Navigate to the backend directory:**
 
   ```bash
   cd attendance-gamification-app/backend
+  ```
 
 3. **Create a virtual environment and activate it:**
 
   ```bash
   python -m venv venv
   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+  ```
 
 4. **Install the required packages:**
 
   ```bash
   pip install -r requirements.txt
+  ```
 
 5. **Apply migrations and start the Django server:**
 
   ```bash
   python manage.py migrate
   python manage.py runserver
+  ```
 
 5. **Frontend Installation
 Navigate to the frontend directory:**
 
   ```bash
   cd ../frontend
+  ```
 
 6. **Install the required packages:**
 
   ```bash
   npm install
+  ```
 
 7. **Start the React development server:**
 
    ```bash
   npm start
-  Usage
-  Provide instructions and examples for using the application.
-
+  ```
 ## Folder Structure
 Outline the structure of your project, including an explanation of the contents of each folder.
 
@@ -97,4 +102,3 @@ Specify the license under which your project is distributed.
 
 ## Contact
 Provide contact information for people who want to get in touch with you regarding the project.
-```

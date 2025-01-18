@@ -4,11 +4,11 @@
 
 ### 1.1 Purpose
 
-The purpose of this Software Requirements Specification (SRS) document is to provide a detailed description of the Mobile Attendance and Gamification System for FMTALI. This document outlines the system's functionality, performance, constraints, and design considerations to guide the development process using the Flutter and Firebase tech stack.
+The purpose of this Software Requirements Specification (SRS) document is to provide a detailed description of the Web Attendance and Gamification System for FMTALI. This document outlines the system's requirements to ensure a complete and comprehensive understanding of the project's goals and functionalities.
 
 ### 1.2 Scope
 
-The Mobile Attendance and Gamification System is intended to streamline the attendance tracking process by allowing students to check-in via a mobile application. It introduces gamification elements to enhance student engagement and punctuality. The system includes features for students, teachers, and administrators, accessible via mobile devices (Android and iOS) and web browsers.
+The Web Attendance and Gamification System is intended to streamline the attendance tracking process by allowing students to check-in via a web application. It introduces gamification elements to motivate students to attend classes regularly and on time.
 
 ### 1.3 Definitions, Acronyms, and Abbreviations
 
@@ -20,24 +20,30 @@ The Mobile Attendance and Gamification System is intended to streamline the atte
 - **LDAP**: Lightweight Directory Access Protocol
 - **SSO**: Single Sign-On
 - **CRUD**: Create, Read, Update, Delete
-- **Firebase**: A Backend-as-a-Service platform provided by Google
-- **Flutter**: An open-source UI software development toolkit by Google
+- **Django**: A high-level Python web framework
+- **Django Rest Framework**: A powerful and flexible toolkit for building Web APIs
+- **React**: A JavaScript library for building user interfaces
+- **TailwindCSS**: A utility-first CSS framework
+- **MaterialUI**: A popular React UI framework
 
 ### 1.4 References
 
 - XYZ School Policies and Guidelines
-- [Flutter Documentation](https://flutter.dev/docs)
-- [Firebase Documentation](https://firebase.google.com/docs)
+- [Django Documentation](https://docs.djangoproject.com/)
+- [Django Rest Framework Documentation](https://www.django-rest-framework.org/)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [MaterialUI Documentation](https://mui.com/getting-started/installation/)
 
 ### 1.5 Overview
 
-This SRS provides a comprehensive overview of the system architecture, functionalities, user interfaces, and specific requirements. It serves as a blueprint for developers and stakeholders to ensure the system meets all expectations and operates effectively within the school environment.
+This SRS provides a comprehensive overview of the system architecture, functionalities, user interfaces, and specific requirements. It serves as a blueprint for developers and stakeholders to ensure that the system meets all defined requirements.
 
 ## 2. Overall Description
 
 ### 2.1 Product Perspective
 
-The Mobile Attendance and Gamification System is a new, independent application designed to replace the traditional paper-based attendance system. It integrates with the school's existing infrastructure but operates as a standalone application with its database and user management.
+The Web Attendance and Gamification System is a new, independent application designed to replace the traditional paper-based attendance system. It integrates with the school's existing infrastructure and provides a modern solution for attendance tracking and student engagement.
 
 ### 2.2 Product Functions
 
@@ -65,27 +71,24 @@ The system provides the following core functionalities:
 
 ### 2.3 User Classes and Characteristics
 
-- **Students**: Primary users who will use the app to check-in and engage with gamification features. Varying levels of technical proficiency; UI must be intuitive.
+- **Students**: Primary users who will use the web application to check-in and engage with gamification features. Varying levels of technical proficiency; UI must be intuitive.
 - **Teachers**: Manage class attendance, monitor student participation. Require tools for oversight and analytics.
 - **Administrators**: Oversee the entire system, manage data, and handle exceptional cases. Require access to all data and system configurations.
 
 ### 2.4 Operating Environment
 
-- **Mobile Application**:
-  - Devices: Android (API level 21 and above), iOS (version 11.0 and above).
-  - Platforms: Smartphones and tablets.
 - **Web Application**:
   - Compatible with modern web browsers (Chrome, Firefox, Safari, Edge).
   - Accessible on desktop and mobile devices.
 - **Backend**:
-  - Firebase services, including Auth, Cloud Firestore, Cloud Functions, and Hosting.
+  - Django and Django Rest Framework for backend services.
 
 ### 2.5 Design and Implementation Constraints
 
 - Must adhere to privacy laws (e.g., FERPA, GDPR) regarding student data.
 - Network connectivity required for real-time features; offline support limited.
 - Performance must be optimized for devices with varying hardware capabilities.
-- Must use Flutter and Firebase as the primary tech stack.
+- Must use Django and Django Rest Framework for the backend, and React, TailwindCSS, and MaterialUI for the frontend.
 
 ### 2.6 Assumptions and Dependencies
 
@@ -165,7 +168,7 @@ The system provides the following core functionalities:
 #### 3.3.1 User Interface
 
 - **UIR1**: The application shall have an intuitive and user-friendly interface.
-- **UIR2**: The UI shall be consistent across different platforms (mobile and web).
+- **UIR2**: The UI shall be consistent across different platforms (desktop and mobile).
 - **UIR3**: The application shall support the school's branding, including colors and logos.
 - **UIR4**: Accessibility features such as scalable fonts and high-contrast modes shall be available.
 
@@ -176,7 +179,7 @@ The system provides the following core functionalities:
 
 #### 3.3.3 Software Interface
 
-- **SIR1**: The system shall interface with Firebase services for backend functionalities.
+- **SIR1**: The system shall interface with Django and Django Rest Framework for backend functionalities.
 - **SIR2**: The application may integrate with existing school systems via APIs if required.
 
 ### 3.4 Non-Functional Requirements
@@ -194,7 +197,7 @@ The system provides the following core functionalities:
 
 #### 3.4.3 Usability Requirements
 
-- **NFR6**: The application shall be usable by individuals with basic smartphone proficiency.
+- **NFR6**: The application shall be usable by individuals with basic computer proficiency.
 - **NFR7**: The system shall provide helpful error messages and guidance when users encounter issues.
 
 #### 3.4.4 Reliability Requirements
@@ -209,8 +212,7 @@ The system provides the following core functionalities:
 
 #### 3.4.6 Portability Requirements
 
-- **NFR12**: The mobile application shall run on both Android and iOS devices.
-- **NFR13**: The web application shall be compatible with major web browsers.
+- **NFR12**: The web application shall be compatible with major web browsers.
 
 ## 4. Appendices
 
@@ -218,6 +220,13 @@ The system provides the following core functionalities:
 
 Use case diagrams illustrating interactions between users and the system.
 
+### Appendix B: Class Diagrams
+
+Class diagrams representing the system's data structure.
+
+### Appendix C: Sequence Diagrams
+
+Sequence diagrams showing the flow of operations for key functionalities.
 ### Appendix B: Class Diagrams
 
 Class diagrams representing the system's data structure.

@@ -43,9 +43,9 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
 
 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/yourusername/attendance-gamification-app.git
-   ```
+ ```bash
+ git clone https://github.com/yourusername/attendance-gamification-app.git
+ ```
 
 2. **Navigate to the backend directory:**
 
@@ -88,9 +88,9 @@ Navigate to the frontend directory:**
 
 7. **Start the React development server:**
 
-   ```bash
-   npm start
-   ```
+  ```bash
+  npm start
+  ```
     
 ## Folder Structure
 Outline the structure of your project, including an explanation of the contents of each folder.

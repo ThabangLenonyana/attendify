@@ -1,6 +1,6 @@
-# Attendify - Attendance Mobile App
+# Attendify - Attendance Web App
 
-Mobile Attendance System with Gamification Features for FMTALI/Afrika Tikkun.
+Web Attendance System with Gamification Features for FMTALI/Afrika Tikkun.
 
 ## Table of Contents
 
@@ -8,7 +8,8 @@ Mobile Attendance System with Gamification Features for FMTALI/Afrika Tikkun.
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+  - [Backend Installation](#backend-installation)
+  - [Frontend Installation](#frontend-installation)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
 - [Contributing](#contributing)
@@ -17,7 +18,7 @@ Mobile Attendance System with Gamification Features for FMTALI/Afrika Tikkun.
 
 ## Introduction
 
-Provide a brief overview of your project, its purpose, and its goals.
+Attendify is a comprehensive web attendance system designed specifically for FMTALI/Afrika Tikkun, which integrates gamification features to enhance user engagement. The primary goal of Attendify is to streamline the attendance tracking process for educational institutions, providing a seamless and efficient way for students to check in via GPS, QR codes, or manual buttons. Teachers can monitor attendance in real-time, and the platform includes gamification elements such as points, badges, and leaderboards to motivate students. Additionally, Attendify offers detailed attendance analytics and reports, supporting both Android, iOS, and Web platforms. This system aims to modernize attendance management while fostering a more interactive and engaging learning environment.
 
 ## Features
 
@@ -31,15 +32,62 @@ Provide a brief overview of your project, its purpose, and its goals.
 
 ### Prerequisites
 
-- Flutter SDK (version X.X.X)
-- Dart SDK
-- Firebase account
-- IDE (VS Code, Android Studio)
+- Python 3.x
+- Node.js and npm
+- Django and Django REST Framework
+- React
+- IDE (VS Code, PyCharm)
+- Firebase account (optional for authentication)
 
-### Installation
+### Backend Installation
 
 1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/yourusername/attendance-gamification-app.git
-   ```
+Navigate to the backend directory:
+
+bash
+cd attendance-gamification-app/backend
+Create a virtual environment and activate it:
+
+bash
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+Install the required packages:
+
+bash
+pip install -r requirements.txt
+Apply migrations and start the Django server:
+
+bash
+python manage.py migrate
+python manage.py runserver
+Frontend Installation
+Navigate to the frontend directory:
+
+bash
+cd ../frontend
+Install the required packages:
+
+bash
+npm install
+Start the React development server:
+
+bash
+npm start
+Usage
+Provide instructions and examples for using the application.
+
+Folder Structure
+Outline the structure of your project, including an explanation of the contents of each folder.
+
+Contributing
+Explain how other developers can contribute to your project.
+
+License
+Specify the license under which your project is distributed.
+
+Contact
+Provide contact information for people who want to get in touch with you regarding the project.
+```

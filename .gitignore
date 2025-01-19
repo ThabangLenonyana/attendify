@@ -1,62 +1,18 @@
-# Flutter/Dart/Pub related
-**/build/
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-.melos/
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Visual Studio Code related
-.vscode/
-.vscode/settings.json
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
 
-# Generated files
-*.g.dart
-*.mocks.dart
+# Virtual environment
+/venv/
+/.venv/
 
-# macOS
-flutter_export_environment.sh
-
-# Android
-android/key.properties
-android/key.jks
-
-# iOS
-ios/Flutter/App.framework
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/ServiceDefinitions.json
-Runner.app
-
-# Firebase
-android/app/google-services.json
-ios/Runner/GoogleService-Info.plist
-
-# Web
-web/firebase-config.js
-
-# Hidden files
-.DS_Store
-
-# Coverage
-coverage/
-
-# Packages
-packages/
-
-# Other IDEs and editors
-*.swp
-*~
-
-# Logs
-*.log
-pubspec.lock
-
-# Temporary files
-*.tmp
-
-# Other
-.env
-*.bak
+# # Project specific
+# /docs/
+# LICENSE
+# README.md

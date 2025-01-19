@@ -21,6 +21,12 @@
   - [Points System](#Points-System)
   - [Badges System](#Badges-System)
   - [Leaderboard](#Leaderboard)
+- [Push Notification Service](#Push-Notification-Service)
+  - [Notification Service](#Notification-Service)
+  - [Notification Triggers](#Notification-Triggers)
+- [Administrative Functions](#Administrative-Functions)
+  - [User Management](#User-Management)
+  - [System Settings Management](#System-Settings-Management)
 - [Database Schema](#database-schema)
 
 
@@ -283,4 +289,44 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
           "rank": 2
         }
       ]
+    }
+
+## Push Notification Service
+
+### Notification Service
+  - **Endpoint**: `/api/notifications/send/`
+  - **Method**: `POST`
+  - **Description**: `Award points to users based on their attendance.`
+  - **Payload**:
+    ```json
+    {
+      "title": "Notification Title",
+      "message": "Notification Message",
+      "recipient_id": 1
+    }
+    
+### Notification Triggers
+  - **Student Check-In and Check-out Notification**
+      - **Description**:  `Sends a notification to the teacher when a student checks in or checks out.`
+  - **Gamification Notifications**
+      - **Description**: `Sends notifications to students when they receive points, rewards, badges, or when their leaderboard rank changes.`
+
+## Administrative Functions
+
+### User Management
+  **Use the Django administration console to manage the Users.**
+  
+### System Settings Management
+  - **Endpoint**: `/api/admin/settings/`
+  - **Method**: `GET`
+  - **Description**: `Retrieve system settings.`
+
+
+  - **Endpoint**: `/api/admin/settings/`
+  - **Method**: `PUT`
+  - **Description**: `Update system settings.
+  - **Payload**:
+    ```json
+    {
+      "setting_name": "value"
     }

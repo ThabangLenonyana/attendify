@@ -7,6 +7,7 @@
   - [User Login](#user-login)
   - [Email Verification](#email-verification)
   - [Password Reset](#password-reset)
+  - [ OAuth using Google](#OAuth-using-Google)
   - [Role-Based Access Control (RBAC)](#role-based-access-control-rbac)
 - [Attendance Tracking](#attendance-tracking)
   - [GPS Checking](#Check-in-via-GPS)
@@ -31,7 +32,7 @@
 
 
 ## Introduction
-Attendify is a comprehensive web attendance system designed specifically for FMTALI/Afrika Tikkun, which integrates gamification features to enhance user engagement. The primary goal of Attendify is to streamline the attendance tracking process while encouraging consistent attendance through a reward system.
+This document provides a comprehensive guide to the backend of Attendify, a Web attendance system with gamification features designed for FMTALI/Afrika Tikkun Services. It details the API endpoints, authentication methods, attendance tracking mechanisms, real-time monitoring, analytics and reporting, gamification features, push notification services, and administrative functions. The goal is to help developers understand and manage the backend functionalities efficiently.
 
 ## Authentication and Authorization
 
@@ -83,6 +84,25 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
     ```json
     {
       "email": "user@example.com"
+    }
+
+### OAuth using Google
+  - **Endpoint**: `/api/auth/oauth/google/`
+  - **Method**: `GET`
+  - **Description**: `Redirects users to Google for OAuth authentication and retrieves user information.`
+  - **Payload**:
+    ```json
+    {
+      "client_id": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+      "client_secret": "YOUR_CLIENT_SECRET",
+      "redirect_uris": [
+        "YOUR_REDIRECT_URI"
+      ],
+      "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+      "token_uri": "https://oauth2.googleapis.com/token",
+      "userinfo_uri": "https://openidconnect.googleapis.com/v1/userinfo",
+      "scope": "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
+      "response_type": "code"
     }
 
 ### Role-Based Access Control (RBAC)

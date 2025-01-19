@@ -8,7 +8,10 @@
   - [Email Verification](#email-verification)
   - [Password Reset](#password-reset)
   - [Role-Based Access Control (RBAC)](#role-based-access-control-rbac)
-- [API Endpoints](#api-endpoints)
+- [Attendance Tracking](#attendance-tracking)
+  - [GPS Checking](#Check-in-via-GPS)
+  - [QR Code Checking](#Check-in-via-qr-code)
+  - [manual Checking](#manual-checking)
 - [Database Schema](#database-schema)
 
 
@@ -60,7 +63,7 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
 ### Password Reset
   - **Endpoint**: `/api/auth/reset-password/`
   - **Method**: `POST`
-  - **Description**: Allows users to reset their password by providing their email..
+  - **Description**: Allows users to reset their password by providing their email.
   - **Payload**:
     ```json
     {
@@ -73,3 +76,39 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
       - **Student**: `Can check-in, view personal attendance records, and participate in gamification.`
       - **Teacher**: `Can generate QR codes, monitor attendance, and access analytics.`
       - **Admin**:  `Can manage users, configure system settings, and access global analytics.`
+
+## Attendance Tracking
+
+### Check in via GPS
+  - **Endpoint**: /api/attendance/check-in/gps/`
+  - **Method**: `POST`
+  - **Description**: Allows users to check-in using their GPS location.`
+  - **Payload**:
+    ```json
+    {
+      "user_id": 1,
+      "latitude": -26.2041,
+      "longitude": 28.0473
+    }
+
+### Check in via QR
+  - **Endpoint**: /api/attendance/check-in/qr/`
+  - **Method**: `POST`
+  - **Description**:`Allows users to check-in by scanning a QR code.`
+  - **Payload**:
+    ```json
+    {
+      "user_id": 1,
+      "qr_code": "sample-qr-code-data"
+    }
+
+### manual checking
+  - **Endpoint**: /api/attendance/check-in/manual/`
+  - **Method**: `POST`
+  - **Description**:`Allows users to check-in manually by pressing a button.`
+  - **Payload**:
+    ```json
+    {
+      "user_id": 1
+    }
+

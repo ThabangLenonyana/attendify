@@ -12,6 +12,8 @@
   - [GPS Checking](#Check-in-via-GPS)
   - [QR Code Checking](#Check-in-via-qr-code)
   - [manual Checking](#manual-checking)
+- [Real-time Monitoring](#real-time-monitoring-by-teachers)
+  - [Monitor](#monitor)
 - [Database Schema](#database-schema)
 
 
@@ -80,7 +82,7 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
 ## Attendance Tracking
 
 ### Check in via GPS
-  - **Endpoint**: /api/attendance/check-in/gps/`
+  - **Endpoint**: `/api/attendance/check-in/gps/`
   - **Method**: `POST`
   - **Description**: Allows users to check-in using their GPS location.`
   - **Payload**:
@@ -92,7 +94,7 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
     }
 
 ### Check in via QR
-  - **Endpoint**: /api/attendance/check-in/qr/`
+  - **Endpoint**: `/api/attendance/check-in/qr/`
   - **Method**: `POST`
   - **Description**:`Allows users to check-in by scanning a QR code.`
   - **Payload**:
@@ -103,7 +105,7 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
     }
 
 ### manual checking
-  - **Endpoint**: /api/attendance/check-in/manual/`
+  - **Endpoint**: `/api/attendance/check-in/manual/`
   - **Method**: `POST`
   - **Description**:`Allows users to check-in manually by pressing a button.`
   - **Payload**:
@@ -112,3 +114,118 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
       "user_id": 1
     }
 
+## real time monitoring by teachers
+
+### Monitor
+  - **Endpoint**: `/api/attendance/monitor`
+  - **Method**: `GET`
+  - **Description**:`Fetches real-time attendance data for teachers to monitor..`
+  - **Payload**:
+    ```json
+    {
+      "status": "success",
+      "data": [
+        {
+          "user_id": 1,
+          "name": "John Doe",
+          "check_in_time": "2025-01-19T06:56:41Z",
+          "status": "Present"
+        },
+        {
+          "user_id": 2,
+          "name": "Jane Doe",
+          "check_in_time": "2025-01-19T06:58:41Z",
+          "status": "Late"
+        }
+      ]
+    }
+    
+## Attendance Analytics and Reporting
+
+### Get Attendance Data
+  - **Endpoint**: `/api/attendance`
+  - **Method**: `GET`
+  - **Description**: `Retrieve attendance records with filtering options.`
+  - **roles**:
+      - **user_id (optional)**: `Filter by user ID`
+      - **status (optional)**: `Filter by attendance status (e.g., Present, Absent, Late).`
+      - **date (optional)**:  `Filter by specific date or date range.`
+  - **Payload**:
+    ```json
+      {
+        "status": "success",
+        "data": [
+          {
+            "id": 1,
+            "user_id": 1,
+            "check_in_time": "2025-01-19T06:56:41Z",
+            "check_out_time": "2025-01-19T14:56:41Z",
+            "status": "Present",
+            "user": {
+              "id": 1,
+              "first_name": "John",
+              "last_name": "Doe",
+              "email": "john.doe@example.com"
+            }
+          },
+          {
+            "id": 2,
+            "user_id": 2,
+            "check_in_time": "2025-01-19T07:02:13Z",
+            "check_out_time": "2025-01-19T15:02:13Z",
+            "status": "Late",
+            "user": {
+              "id": 2,
+              "first_name": "Jane",
+              "last_name": "Doe",
+              "email": "jane.doe@example.com"
+            }
+          }
+        ]
+      }
+
+### Generate Attendance Report
+  - **Endpoint**: `/api/attendance/report`
+  - **Method**: `POST`
+  - **Description**: `Generate attendance reports based on given criteria.`
+  - **Payload**:
+    ```json
+    {
+      "status": "success",
+      "report": {
+        "start_date": "2025-01-01T00:00:00Z",
+        "end_date": "2025-01-19T23:59:59Z",
+        "total_days": 19,
+        "total_present": 15,
+        "total_absent": 2,
+        "total_late": 2,
+        "attendance_records": [
+          {
+            "id": 1,
+            "user_id": 1,
+            "check_in_time": "2025-01-19T06:56:41Z",
+            "check_out_time": "2025-01-19T14:56:41Z",
+            "status": "Present",
+            "user": {
+              "id": 1,
+              "first_name": "John",
+              "last_name": "Doe",
+              "email": "john.doe@example.com"
+            }
+          },
+          {
+            "id": 2,
+            "user_id": 2,
+            "check_in_time": "2025-01-19T07:02:13Z",
+            "check_out_time": "2025-01-19T15:02:13Z",
+            "status": "Late",
+            "user": {
+              "id": 2,
+              "first_name": "Jane",
+              "last_name": "Doe",
+              "email": "jane.doe@example.com"
+            }
+          }
+        ]
+      }
+    }

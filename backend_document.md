@@ -14,6 +14,13 @@
   - [manual Checking](#manual-checking)
 - [Real-time Monitoring](#real-time-monitoring-by-teachers)
   - [Monitor](#monitor)
+- [Attendance Analytics and Reporting](#Attendance-Analytics-and-Reporting)
+  - [Get Attendance Data](#Get-Attendance-Data)
+  - [Generate Attendance Report](#Generate-Attendance-Report)
+- [Gamification Features](#Gamification-Features)
+  - [Points System](#Points-System)
+  - [Badges System](#Badges-System)
+  - [Leaderboard](#Leaderboard)
 - [Database Schema](#database-schema)
 
 
@@ -146,7 +153,7 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
   - **Endpoint**: `/api/attendance`
   - **Method**: `GET`
   - **Description**: `Retrieve attendance records with filtering options.`
-  - **roles**:
+  - **Query Parameters**:
       - **user_id (optional)**: `Filter by user ID`
       - **status (optional)**: `Filter by attendance status (e.g., Present, Absent, Late).`
       - **date (optional)**:  `Filter by specific date or date range.`
@@ -228,4 +235,52 @@ Attendify is a comprehensive web attendance system designed specifically for FMT
           }
         ]
       }
+    }
+
+## Gamification Features
+
+### Points System
+  - **Endpoint**: `/api/gamification/award_points`
+  - **Method**: `POST`
+  - **Description**: `Award points to users based on their attendance.`
+  - **Payload**:
+    ```json
+    {
+      "user_id": 1,
+      "points": 10
+    }
+    
+### Badges System
+  - **Endpoint**: `/api/gamification/award_badge`
+  - **Method**: `POST`
+  - **Description**: `Award badges to users for specific achievements.`
+  - **Payload**:
+    ```json
+    {
+      "user_id": 1,
+      "badge": "Perfect Attendance"
+    }
+
+### Leaderboard
+  - **Endpoint**: `/api/gamification/leaderboard`
+  - **Method**: `GET`
+  - **Description**: `Retrieve the current leaderboard.`
+  - **Payload**:
+    ```json
+    {
+      "status": "success",
+      "leaderboard": [
+        {
+          "user_id": 1,
+          "name": "John Doe",
+          "points": 150,
+          "rank": 1
+        },
+        {
+          "user_id": 2,
+          "name": "Jane Doe",
+          "points": 140,
+          "rank": 2
+        }
+      ]
     }

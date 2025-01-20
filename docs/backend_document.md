@@ -211,6 +211,17 @@ This document provides a comprehensive guide to the backend of Attendify, a Web 
       "check_out_time": "2025-01-19T14:56:41Z",
       "status": "Present"
     }
+
+### editing attendance
+  - **Endpoint**: `/api/teacher/attendance/generate-qr`
+  - **Method**: `POST`
+  - **Description**:`Allows teachers to generate QR codes for attendance.`
+  - **Payload**:
+    ```json
+    {
+      "status": "success",
+      "qr_code_url": "http://example.com/qrcode.png"
+    }
     
 ## Attendance Analytics and Reporting
 

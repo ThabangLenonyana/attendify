@@ -13,8 +13,9 @@
   - [GPS Checking](#Check-in-via-GPS)
   - [QR Code Checking](#Check-in-via-qr-code)
   - [manual Checking](#manual-checking)
-- [Real-time Monitoring](#real-time-monitoring-by-teachers)
+- [teacher](#teacher)
   - [Monitor](#monitor)
+  - [editing attendance](editing-attendance)
 - [Attendance Analytics and Reporting](#Attendance-Analytics-and-Reporting)
   - [Get Attendance Data](#Get-Attendance-Data)
   - [Generate Attendance Report](#Generate-Attendance-Report)
@@ -147,10 +148,34 @@ This document provides a comprehensive guide to the backend of Attendify, a Web 
       "user_id": 1
     }
 
-## real time monitoring by teachers
+### manual checking
+  - **Endpoint**: `/api/attendance/check-out/`
+  - **Method**: `POST`
+  - **Description**:`Allows users to check-out of the system using their user ID.`
+  - **Payload**:
+    ```json
+    {
+      "status": "success",
+      "data": [
+        {
+          "user_id": 1,
+          "name": "John Doe",
+          "check_in_time": "2025-01-19T06:56:41Z",
+          "status": "Present"
+        },
+        {
+          "user_id": 2,
+          "name": "Jane Doe",
+          "check_in_time": "2025-01-19T06:58:41Z",
+          "status": "Late"
+        }
+      ]
+    }
+
+## teachers
 
 ### Monitor
-  - **Endpoint**: `/api/attendance/monitor`
+  - **Endpoint**: `/api/teacher/attendance/monitor`
   - **Method**: `GET`
   - **Description**:`Fetches real-time attendance data for teachers to monitor..`
   - **Payload**:
@@ -171,6 +196,20 @@ This document provides a comprehensive guide to the backend of Attendify, a Web 
           "status": "Late"
         }
       ]
+    }
+
+### editing attendance
+  - **Endpoint**: `/api/teacher/attendance/edit/`
+  - **Method**: `PUT`
+  - **Description**:`Allows teachers to manually alter attendance records`
+  - **Payload**:
+    ```json
+    {
+      "attendance_id": 1,
+      "user_id": 1,
+      "check_in_time": "2025-01-19T06:56:41Z",
+      "check_out_time": "2025-01-19T14:56:41Z",
+      "status": "Present"
     }
     
 ## Attendance Analytics and Reporting

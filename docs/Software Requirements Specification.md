@@ -216,21 +216,53 @@ The system provides the following core functionalities:
 
 ## 4. Appendices
 
-### Appendix A: Use Case Diagrams
+### Appendix A: User Interface Mockups
 
-Use case diagrams illustrating interactions between users and the system.
+Illustrates the proposed user interface designs for the student, teacher, and admin interfaces.
 
-### Appendix B: Class Diagrams
+### Appendix B: System Architecture Diagram
 
-Class diagrams representing the system's data structure.
+Illustrates the high-level architecture of the system, including the frontend, backend, and database components.
+![System Architecture Diagram](./Diagrams/SystemArchitecture_Diagram.svg)
 
-### Appendix C: Sequence Diagrams
+### Appendix C: Use Case Diagrams
 
-Sequence diagrams showing the flow of operations for key functionalities.
-### Appendix B: Class Diagrams
+Illustrates the main interactions between different types of users (Student, Teacher, Admin) and the system functionalities.
+![Use Case Diagram](./Diagrams/UseCase_Diagram.svg)
 
-Class diagrams representing the system's data structure.
+### Appendix D: Class Diagrams
 
-### Appendix C: Sequence Diagrams
+Represents the main data structures and their relationships, showing how different entities in the system are connected.
+![Class Diagram](./Diagrams/Database_Diagram.svg)
 
-Sequence diagrams showing the flow of operations for key functionalities.
+### Appendix E: Sequence Diagrams
+
+#### Student Check-In Sequence
+
+Demonstrates the flow of the check-in process, which is one of the core functionalities of the system.
+![Student Check-In Sequence Diagram](./Diagrams/Check-In_Sequence_Diagram.svg)
+
+#### Student Points and Rewards Sequence
+
+Shows how students interact with the gamification system, including viewing points/badges and redeeming rewards.
+![Student Points and Rewards Sequence Diagram](./Diagrams/StudentPoints_Sequence_Diagram.svg)
+
+#### Teacher QR Generation and Monitoring Sequence
+
+Illustrates the process of generating QR codes for attendance and monitoring student attendance in real-time.
+![Teacher QR Generation and Monitoring Sequence Diagram](./Diagrams/QRcode&Monitoring_Sequence_Diagram.svg)
+
+#### Administrator Functions Sequence
+
+Demonstrates the flow of administrative tasks including user management, system configuration, and global reporting.
+![Administrator Functions Sequence Diagram](./Diagrams/Admin_Functions_Sequence_Diagram.svg)
+
+#### Notification System Sequence
+
+Shows how different types of notifications are triggered, processed, and delivered to users.
+![Notification System Sequence Diagram](./Diagrams/Notifications_Sequence_Diagram.svg)
+
+#### Reports and Analytics Sequence
+
+Illustrates how the system generates various reports and analytics for different user roles.
+![Reports and Analytics Sequence Diagram](./Diagrams/Reports_&_Analytics_Sequence_Diagram.svg)

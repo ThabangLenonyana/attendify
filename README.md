@@ -3,6 +3,8 @@
 ## Introduction
 Attendify is a Web Attendance and Gamification System designed for XYZ School to streamline the attendance process and motivate students through gamification. The system allows students to check-in via a web application and provides various features for students, teachers, and administrators.
 
+![Mockup](./docs/Mockups/main.svg)
+
 ## User Requirements
 
 ### Students' Requirements

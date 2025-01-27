@@ -7,15 +7,18 @@
   - [User Login](#user-login)
   - [Email Verification](#email-verification)
   - [Password Reset](#password-reset)
-  - [ OAuth using Google](#OAuth-using-Google)
+  - [OAuth using Google](#OAuth-using-Google)
+  - [JWT Authentication](#JWT-Authentication)
   - [Role-Based Access Control (RBAC)](#role-based-access-control-rbac)
 - [Attendance Tracking](#attendance-tracking)
   - [GPS Checking](#Check-in-via-GPS)
   - [QR Code Checking](#Check-in-via-qr-code)
   - [manual Checking](#manual-checking)
+  - [Checking Out](Checking-Out)
 - [teacher](#teacher)
   - [Monitor](#monitor)
   - [editing attendance](editing-attendance)
+  - [Generating QR](#Generating-QR)
 - [Attendance Analytics and Reporting](#Attendance-Analytics-and-Reporting)
   - [Get Attendance Data](#Get-Attendance-Data)
   - [Generate Attendance Report](#Generate-Attendance-Report)
@@ -29,7 +32,6 @@
 - [Administrative Functions](#Administrative-Functions)
   - [User Management](#User-Management)
   - [System Settings Management](#System-Settings-Management)
-- [Database Schema](#database-schema)
 
 
 ## Introduction
@@ -106,6 +108,23 @@ This document provides a comprehensive guide to the backend of Attendify, a Web 
       "response_type": "code"
     }
 
+### JWT Authentication
+  - **Endpoint**: `/api/auth/token/`
+  - **Method**: `POST`
+  - **Description**: Generates a JWT token for authenticated users.
+  - **Payload**:
+    ```json
+    {
+      "email": "user@example.com",
+      "password": "securepassword"
+    }
+  - **Response**:
+    ```json
+    {
+      "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...",
+      "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."
+    }
+
 ### Role-Based Access Control (RBAC)
   - **Description**: `Users are assigned roles (Student, Teacher, Admin) that determine their access levels and permissions within the system.`
   - **roles**:
@@ -148,7 +167,7 @@ This document provides a comprehensive guide to the backend of Attendify, a Web 
       "user_id": 1
     }
 
-### manual checking
+### Checking Out
   - **Endpoint**: `/api/attendance/check-out/`
   - **Method**: `POST`
   - **Description**:`Allows users to check-out of the system using their user ID.`
@@ -177,7 +196,7 @@ This document provides a comprehensive guide to the backend of Attendify, a Web 
 ### Monitor
   - **Endpoint**: `/api/teacher/attendance/monitor`
   - **Method**: `GET`
-  - **Description**:`Fetches real-time attendance data for teachers to monitor..`
+  - **Description**:`Fetches real-time attendance data for teachers to monitor.`
   - **Payload**:
     ```json
     {
@@ -212,7 +231,7 @@ This document provides a comprehensive guide to the backend of Attendify, a Web 
       "status": "Present"
     }
 
-### editing attendance
+### Generating QR
   - **Endpoint**: `/api/teacher/attendance/generate-qr`
   - **Method**: `POST`
   - **Description**:`Allows teachers to generate QR codes for attendance.`
